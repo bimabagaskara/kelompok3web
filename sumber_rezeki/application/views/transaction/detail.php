@@ -5,19 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Bootstrap-ecommerce by Vosidiy">
-    <title>Sumber Rezeki- #<?= $inpo['id_order'] ?></title>
+    <title>Sumber Rezeki - #<?=$inpo['id_order']?></title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <!-- jQuery -->
-    <script src="<?= base_url('assets/') ?>js/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="<?= base_url('assets/')?>js/jquery-2.0.0.min.js" type="text/javascript"></script>
     <!-- Bootstrap4 files-->
-    <script src="<?= base_url('assets/') ?>js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <link href="<?= base_url('assets/') ?>css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="<?= base_url('assets/')?>js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="<?= base_url('assets/')?>css/bootstrap.css" rel="stylesheet" type="text/css" />
 
 
     <!-- custom style -->
-    <link href="<?= base_url('assets/') ?>css/ui.css" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url('assets/') ?>css/style.css" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url('assets/') ?>css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link href="<?= base_url('assets/')?>css/ui.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/')?>css/style.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/')?>css/responsive.css" rel="stylesheet"
+        media="only screen and (max-width: 1200px)" />
 
 
 
@@ -43,38 +44,40 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 text-center text-md-left">
                                     <ul class="px-0 list-unstyled">
-                                        <?php if ($inpo['status'] == 'Menunggu Pembayaran') : ?>
-                                            <li class="font-weight-bold bg-danger text-center text-white">
-                                                <?= $inpo['status'] ?>
-                                            </li>
-                                        <?php elseif ($inpo['status'] == 'Proses') : ?>
-                                            <li class="font-weight-bold bg-warning text-center text-white">
-                                                <?= $inpo['status'] ?>
-                                            <?php else : ?>
-                                            <li class="font-weight-bold bg-success text-center text-white">
-                                                <?= $inpo['status'] ?>
-                                            </li>
-                                        <?php endif ?>
+                                        <?php if($inpo['status']=='Menunggu Pembayaran'):?>
+                                        <li class="font-weight-bold bg-danger text-center text-white">
+                                            <?=$inpo['status']?>
+                                        </li>
+                                        <?php elseif($inpo['status']=='Proses'):?>
+                                        <li class="font-weight-bold bg-warning text-center text-white">
+                                            <?=$inpo['status']?>
+                                            <?php else:?>
+                                        <li class="font-weight-bold bg-success text-center text-white">
+                                            <?=$inpo['status']?>
+                                        </li>
+                                        <?php endif?>
                                     </ul>
                                 </div>
 
                             </div>
                             <div class="col-md-6 col-sm-12 text-center text-md-right">
                                 <h2>INVOICE</h2>
-                                <p class="pb-3">#<?= $inpo['id_order'] ?></p>
+                                <p class="pb-3">#<?=$inpo['id_order']?></p>
                                 <ul class="px-0 list-unstyled">
                                     <li>Total Bayar</li>
                                     <li class="lead text-bold-800"><?= rupiah($inpo['total']) ?></li>
-                                    <?php if ($inpo['status'] != 'Menunggu Pembayaran') { ?>
-                                        <li class="mt-2">Bukti Bayar</li>
-                                        <li class="mt-2">
-                                            <?php
-                                            $this->db->where('id_order', $inpo['id_order']);
+                                    <?php if ($inpo['status']!='Menunggu Pembayaran') {?>
+                                    <li class="mt-2">Bukti Bayar</li>
+                                    <li class="mt-2">
+                                        <?php 
+                                            $this->db->where('id_order',$inpo['id_order']);
                                             $bukti = $this->db->get('payment')->row_array(); ?>
 
-                                            <a href="" data-toggle="modal" data-target="#upload<?= $inpo['id_order'] ?>"><img src=" <?= base_url('include/assets/img/proof/') . $bukti['image'] ?>" class="img-sm"></a>
+                                        <a href="" data-toggle="modal" data-target="#upload<?=$inpo['id_order']?>"><img
+                                                src=" <?= base_url('include/assets/img/proof/').$bukti['image'] ?>"
+                                                class="img-sm"></a>
 
-                                        </li>
+                                    </li>
                                     <?php } ?>
 
                                     <li></li>
@@ -91,8 +94,8 @@
                             </div>
                             <div class="col-md-6 col-sm-12 text-center text-md-left">
                                 <ul class="px-0 list-unstyled">
-                                    <li class="text-bold-800"><?= $inpo['receiver'] ?></li>
-                                    <li><?= $inpo['s_address'] ?></li>
+                                    <li class="text-bold-800"><?=$inpo['receiver']?></li>
+                                    <li><?=$inpo['s_address']?></li>
 
                                 </ul>
                             </div>
@@ -119,20 +122,20 @@
                                         </thead>
 
                                         <tbody>
-                                            <?php $i = 1; ?>
+                                            <?php $i=1;?>
                                             <?php foreach ($inpo1 as $in) {
-                                            ?>
-                                                <tr>
-                                                    <th scope="row"><?= $i; ?></th>
-                                                    <td>
-                                                        <p><?= $in['name_products'] ?></p>
-                                                        <p class="text-muted"><?= $in['note'] ?></p>
-                                                    </td>
-                                                    <td class="text-right"><?= rupiah($in['price_total']) ?></td>
-                                                    <td class="text-right"><?= $in['qty'] ?></td>
-                                                    <td class="text-right"><?= rupiah($in['c_price']) ?></td>
-                                                </tr>
-                                                <?php $i++; ?>
+                                   ?>
+                                            <tr>
+                                                <th scope="row"><?=$i;?></th>
+                                                <td>
+                                                    <p><?=$in['name_products']?></p>
+                                                    <p class="text-muted"><?=$in['note']?></p>
+                                                </td>
+                                                <td class="text-right"><?= rupiah($in['price_total'])?></td>
+                                                <td class="text-right"><?=$in['qty']?></td>
+                                                <td class="text-right"><?= rupiah($in['c_price'])?></td>
+                                            </tr>
+                                            <?php $i++;?>
                                             <?php }  ?>
                                         </tbody>
                                     </table>
@@ -147,19 +150,19 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>Kurir:</td>
-                                                        <?php if ($inpo['kurir'] == "pos") : ?>
-                                                            <td class="">POS</td>
-                                                        <?php elseif ($inpo['kurir'] == "jne") : ?>
-                                                            <td class="">JNE</td>
-                                                        <?php endif ?>
+                                                        <?php if($inpo['kurir']=="pos"):?>
+                                                        <td class="">POS</td>
+                                                        <?php elseif($inpo['kurir']=="jne"):?>
+                                                        <td class="">JNE</td>
+                                                        <?php endif?>
                                                     </tr>
                                                     <tr>
                                                         <td>Layanan:</td>
-                                                        <td class=""><?= $inpo['service'] ?></td>
+                                                        <td class=""><?=$inpo['service']?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Resi:</td>
-                                                        <td class=""><?= $inpo['resi'] ?></td>
+                                                        <td class=""><?=$inpo['resi']?></td>
                                                     </tr>
 
                                                 </tbody>
@@ -174,16 +177,16 @@
                                             <tbody>
                                                 <tr>
                                                     <td>Sub Total</td>
-                                                    <td class="text-right"><?= rupiah($inpo['c_total']) ?></td>
+                                                    <td class="text-right"><?= rupiah($inpo['c_total'])?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Ongkir</td>
-                                                    <td class="text-right"><?= rupiah($inpo['shipping_c']) ?></td>
+                                                    <td class="text-right"><?= rupiah($inpo['shipping_c'])?></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bold">Total </td>
                                                     <td class="font-weight-bold text-right">
-                                                        <?= rupiah($inpo['total']) ?>
+                                                        <?= rupiah($inpo['total'])?>
                                                     </td>
                                                 </tr>
 
@@ -198,20 +201,20 @@
                     </div>
                     <div class="float-right">
 
-                        <a href="<?= base_url('transaction') ?>">
+                        <a href="<?= base_url('transaction')?>">
                             <button type="button" id="home" class="btn btn-danger  my-1">Kembali</button>
                         </a>
                         <button type="button" id="cetak" onclick="cetak()" class="btn btn-success  my-1">Cetak
                         </button>
 
                         <script>
-                            function cetak() {
-                                document.getElementById("cetak").style.visibility = "hidden";
-                                document.getElementById("home").style.visibility = "hidden";
-                                window.print();
-                                window.location.pathname.split('/')
+                        function cetak() {
+                            document.getElementById("cetak").style.visibility = "hidden";
+                            document.getElementById("home").style.visibility = "hidden";
+                            window.print();
+                            window.location.pathname.split('/')
 
-                            }
+                        }
                         </script>
 
 
@@ -221,7 +224,8 @@
 
 
                     <!-- Modal -->
-                    <div class="modal fade bd-example-modal-xl" id="upload<?= $inpo['id_order'] ?>" tabindex="-1" role="dialog" aria-labelledby="uploadTitle" aria-hidden="true">
+                    <div class="modal fade bd-example-modal-xl" id="upload<?=$inpo['id_order']?>" tabindex="-1"
+                        role="dialog" aria-labelledby="uploadTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -234,7 +238,8 @@
                                 <div class="modal-body">
                                     <img src="" alt="">
 
-                                    <img src="<?= base_url('include/assets/img/proof/') . $bukti['image'] ?>" class="img-fluid">
+                                    <img src="<?= base_url('include/assets/img/proof/').$bukti['image'] ?>"
+                                        class="img-fluid">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -265,45 +270,45 @@
         </div>
     </div>
     <style>
-        .height {
-            min-height: 200px;
-        }
+    .height {
+        min-height: 200px;
+    }
 
-        .icon {
-            font-size: 47px;
-            color: #5CB85C;
-        }
+    .icon {
+        font-size: 47px;
+        color: #5CB85C;
+    }
 
-        .iconbig {
-            font-size: 77px;
-            color: #5CB85C;
-        }
+    .iconbig {
+        font-size: 77px;
+        color: #5CB85C;
+    }
 
-        .table>tbody>tr>.emptyrow {
-            border-top: none;
-        }
+    .table>tbody>tr>.emptyrow {
+        border-top: none;
+    }
 
-        .table>thead>tr>.emptyrow {
-            border-bottom: none;
-        }
+    .table>thead>tr>.emptyrow {
+        border-bottom: none;
+    }
 
-        .table>tbody>tr>.highrow {
-            border-top: 3px solid;
-        }
+    .table>tbody>tr>.highrow {
+        border-top: 3px solid;
+    }
 
-        #invoice-template {
-            padding: 4rem;
-        }
+    #invoice-template {
+        padding: 4rem;
+    }
     </style>
     <br /><br /><br />
 </body>
 <script>
-    $('.custom-file-input').on('change', function() {
-        //get the file name
-        var fileName = $(this).val();
-        //replace the "Choose a file" label
-        $(this).next('.custom-file-label').html(fileName);
-    })
+$('.custom-file-input').on('change', function() {
+    //get the file name
+    var fileName = $(this).val();
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName);
+})
 </script>
 
 </html>

@@ -1,9 +1,9 @@
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message') ?>"></div>
-<nav class="navbar navbar-dark navbar-expand-sm p-0 bg-danger  ">
-
+<nav class="navbar navbar-dark navbar-expand-sm p-0 bg-danger ">
     <div class="container ">
         <a class="navbar-brand pl-2" href="<?= base_url() ?>">
-
+            <!-- <img class="logo" src="images/logos/logo-alibaba.png"
+            alt="alibaba style e-commerce html template file" title="alibaba e-commerce html css theme"> -->
             <span class="text-white font-weight-bold">Sumber Rezeki </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
@@ -164,24 +164,3 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y-sm" style="min-height:430px">
     <div class="container">
-        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-interval="10000">
-                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
-                </div>
-                <div class="carousel-item" data-interval="2000">
-                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>

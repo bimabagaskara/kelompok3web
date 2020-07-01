@@ -1,14 +1,7 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y-sm">
     <div class="container">
-        <!-- <nav class="mb-3">
-						<ol class="breadcrumb">
-										<li class="breadcrumb-item"><a href="#">Home</a></li>
-										<li class="breadcrumb-item"><a href="#">Category name</a></li>
-										<li class="breadcrumb-item"><a href="#">Sub category</a></li>
-										<li class="breadcrumb-item active" aria-current="page">Items</li>
-						</ol>
-		</nav> -->
+
         <div class="row ">
             <div class="col-md-9 ">
                 <div class="row pt-3 pb-3 rounded shadow-sm bg-white">
@@ -57,8 +50,8 @@
                             <?php echo form_hidden('weight', $p['weight']); ?>
                             <?php echo form_hidden('stock', $p['stock']); ?>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Catatan</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="note" placeholder="Contoh: Size M = 3 pcs" rows="3" maxlength="100"></textarea>
+                                <label for="exampleFormControlTextarea1">Catatan untuk penjual</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="note" placeholder="" rows="3" maxlength="100"></textarea>
                             </div>
 
                             <button type="submit" name="add-cart" class="btn btn-success btn-lg btn-block mb-2 add-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -66,7 +59,7 @@
                                 keranjang</button>
                             <?php echo form_close(); ?>
 
-                            <a href="" class=""><button type="submit" class="btn btn-light font-weight-bold shadow-sm"><i class=" fab text-success fa-whatsapp"></i> Chat Admin</button></a>
+
                         </div>
                         <div class="mr-4 mt-2 float-right"><i class="fas fa-shield-alt text-danger "></i> Jaminan 100%
                             Aman</div>

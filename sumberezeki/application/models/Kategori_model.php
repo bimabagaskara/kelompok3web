@@ -30,6 +30,17 @@ class Kategori_model extends CI_Model {
         return $query->row();
     }
 
+    //detail slug kategori
+    public function read($slug_kategori)
+    {
+        $this->db->select('*');
+        $this->db->from('kategori');
+        $this->db->where('slug_kategori', $slug_kategori);
+        $this->db->order_by('id_kategori', 'desc');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
     //login kategori
     public function login($kategoriname,$password)
     {

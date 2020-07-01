@@ -11,10 +11,11 @@ require APPPATH . 'libraries/Format.php';
 class Products extends REST_Controller
 {
     public function __construct()
-  {
-    parent::__construct();
-    $this->load->model('Products_model', 'products');
-  }
+    {
+        parent::__construct();
+        $this->load->model('Products_model', 'products');
+    }
+
     public function index_get()
     {
         $id_products = $this->get('id_products');
@@ -23,13 +24,21 @@ class Products extends REST_Controller
         } else {
             $products = $this->products->getProducts($id_products);
         }
-        $products = $this->products->getProducts();
         
-        if ($products) {
+        if($products) {
             $this->response([
-                'status' => true,
-                'data' => $products
-            ], REST_Controller::HTTP_OK); // NOT_FOUND (404) being the HTTP response code
+                    'status' => TRUE,
+                    'data' => $products
+                ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                    'status' => FALSE,
+                    'message' => 'id not found'
+                ], REST_Controller::HTTP_NOT_FOUND);
         }
     }
+
+
+
+
 }

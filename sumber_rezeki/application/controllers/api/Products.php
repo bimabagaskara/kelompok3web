@@ -14,6 +14,8 @@ class Products extends REST_Controller
     {
         parent::__construct();
         $this->load->model('Products_model', 'products');
+
+        $this->methods['index_get']['limit'] = 10;
     }
 
     public function index_get()

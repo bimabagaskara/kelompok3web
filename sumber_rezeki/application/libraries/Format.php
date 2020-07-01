@@ -1,6 +1,6 @@
 <?php
-namespace Restserver\Libraries;
-use Exception;
+// Note, this cannot be namespaced for the time being due to how CI works
+//namespace Restserver\Libraries;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -93,9 +93,9 @@ class Format {
         // If the provided data is already formatted we should probably convert it to an array
         if ($from_type !== NULL)
         {
-            if (method_exists($this, '_from_'.$from_type))
+            if (method_exists($this, 'from'.$from_type))
             {
-                $data = call_user_func([$this, '_from_'.$from_type], $data);
+                $data = call_user_func([$this, 'from'.$from_type], $data);
             }
             else
             {
@@ -116,9 +116,9 @@ class Format {
      *
      * @return object Instance of the format class
      */
-    public static function factory($data, $from_type = NULL)
+    public function factory($data, $from_type = NULL)
     {
-        // $class = __CLASS__;
+        // $class = _CLASS_;
         // return new $class();
 
         return new static($data, $from_type);
@@ -381,9 +381,6 @@ class Format {
         // Close the handle
         fclose($handle);
 
-        // Convert UTF-8 encoding to UTF-16LE which is supported by MS Excel
-        $csv = mb_convert_encoding($csv, 'UTF-16LE', 'UTF-8');
-
         return $csv;
     }
 
@@ -408,21 +405,21 @@ class Format {
 
         if (empty($callback) === TRUE)
         {
-            return json_encode($data, JSON_UNESCAPED_UNICODE);
+            return json_encode($data);
         }
 
         // We only honour a jsonp callback which are valid javascript identifiers
-        elseif (preg_match('/^[a-z_\$][a-z0-9\$_]*(\.[a-z_\$][a-z0-9\$_]*)*$/i', $callback))
+        elseif (preg_match('/^[a-z_\$][a-z0-9\$]*(\.[a-z\$][a-z0-9\$_]*)*$/i', $callback))
         {
             // Return the data as encoded json with a callback
-            return $callback.'('.json_encode($data, JSON_UNESCAPED_UNICODE).');';
+            return $callback.'('.json_encode($data).');';
         }
 
         // An invalid jsonp callback function provided.
         // Though I don't believe this should be hardcoded here
         $data['warning'] = 'INVALID JSONP CALLBACK: '.$callback;
 
-        return json_encode($data, JSON_UNESCAPED_UNICODE);
+        return json_encode($data);
     }
 
     /**

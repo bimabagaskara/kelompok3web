@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
 use Restserver\Libraries\REST_Controller;
 
-class Daftar extends REST_Controller {
+class daftar extends REST_Controller {
 
     function __construct($config = 'rest') {
         parent::__construct($config);
@@ -26,21 +26,21 @@ class Daftar extends REST_Controller {
      //Mengirim atau menambah data user baru
      function index_post() {
         $data = array(
-                    'id_user'           => $this->post('id_user'),
-                    'fullname'          => $this->post('nama'),
+                    'fullname'          => $this->post('fullname'),
                     'email'             => $this->post('email'),
                     'password'          => $this->post('password'),
                     'gender'            => $this->post('gender'),
-                    'address'           => $this->post('alamat'),
+                    'address'           => $this->post('address'),
                     'is_active'            => 1,
-                'date_created'=> date ('Y-m-d'));
+                     'date_created'         => date ('Y-m-d')
+                    );
         $insert = $this->db->insert('user', $data);
         if ($insert) {
-            $this->response($data, 200);
+            $this->response(array('status' => 'success', 200));
         } else {
-            $this->response(array('status' => 'fail', 502));
-        }
+            $this->response(array('status' => 'success', 502));
     }
+}
 
 
     function index_put() {
@@ -57,9 +57,9 @@ class Daftar extends REST_Controller {
         $this->db->where('id_user', $id_user);
         $update = $this->db->update('user', $data);
         if ($update) {
-            $this->response($data, 200);
+            $this->response(array('status' => 'success', 200));
         } else {
-            $this->response(array('status' => 'fail', 502));
+            $this->response(array('status' => 'success', 502));
         }
     }
 
@@ -78,4 +78,4 @@ class Daftar extends REST_Controller {
 
 
 }
-?>   
+?>

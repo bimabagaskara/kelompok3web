@@ -40,6 +40,20 @@
             "processing": true,
 
 
+            // dom: 'Bfrtip',  
+            // "buttons": [
+            //        {
+            //            extend: 'collection',
+            //            text: 'Export',
+            //            buttons: [
+            //                'copy',
+            //                'excel',
+            //                'csv',
+            //                'pdf',
+            //                'print'
+            //            ]
+            //        }
+            //    ] 
         });
     });
 </script>
@@ -72,7 +86,25 @@
         });
     });
 
-
+    // $(document).ready(function(){
+    //     $('#categoryss').change(function(){
+    //         var category_Id = $('#categorys').val();
+    //         if (category_Id != '') {
+    //             $.ajax(
+    //             {
+    //                 url:"<?= base_url('admin/fetch_subcat') ?>",
+    //                 method :  "POST",
+    //                 data : {category_Id:category_Id},
+    //                 success:function(data)
+    //                 {
+    //                     $('#subcategory').va(data);
+    //                 }
+    //             })
+    //         } else {
+    //             $('#subcategory').html('<option value="">No Subcategory</option>');
+    //         }
+    //     });
+    // });
 
     $(document).ready(function() {
 

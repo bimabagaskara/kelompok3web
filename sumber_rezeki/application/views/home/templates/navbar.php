@@ -1,17 +1,9 @@
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message') ?>"></div>
-<<<<<<< HEAD
 <nav class="navbar navbar-dark navbar-expand-sm p-0 bg-danger  ">
 
     <div class="container ">
         <a class="navbar-brand pl-2" href="<?= base_url() ?>">
 
-=======
-<nav class="navbar navbar-dark navbar-expand-sm p-0 bg-danger ">
-    <div class="container ">
-        <a class="navbar-brand pl-2" href="<?= base_url() ?>">
-            <!-- <img class="logo" src="images/logos/logo-alibaba.png"
-            alt="alibaba style e-commerce html template file" title="alibaba e-commerce html css theme"> -->
->>>>>>> 961466103dd884e401ecd9d9c57048052c6e2505
             <span class="text-white font-weight-bold">Sumber Rezeki </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
@@ -171,7 +163,6 @@
 <!-- section-header.// -->
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y-sm" style="min-height:430px">
-<<<<<<< HEAD
     <div class="container">
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -194,6 +185,3 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-=======
-    <div class="container">
->>>>>>> 961466103dd884e401ecd9d9c57048052c6e2505

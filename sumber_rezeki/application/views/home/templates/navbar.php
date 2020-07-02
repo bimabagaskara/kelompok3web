@@ -1,5 +1,5 @@
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message') ?>"></div>
-<nav class="navbar navbar-dark navbar-expand-sm p-0 bg-danger ">
+<nav class="navbar navbar-dark navbar-expand-sm p-0 bg-blue ">
     <div class="container ">
         <a class="navbar-brand pl-2" href="<?= base_url() ?>">
             <!-- <img class="logo" src="images/logos/logo-alibaba.png"
@@ -11,10 +11,7 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarTop">
 
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item "><a href="#" class="nav-link"> Pembayaran </a></li>
 
-            </ul>
             <!-- navbar-nav.// -->
         </div>
         <!-- collapse.// -->
@@ -40,7 +37,7 @@
                     <div class="input-group w-100">
                         <input type="text" class="form-control" value="" name="cari" style="width:50%;" placeholder="Search">
                         <div class="input-group-append">
-                            <button class="btn btn-danger" type="submit">
+                            <button class="btn btn-primary type=" submit">
                                 <i class="fa fa-search"></i> Cari
                             </button>
                         </div>
@@ -56,7 +53,7 @@
                             <div class="widget-header dropdown">
                                 <a href="#" data-toggle="dropdown" data-offset="20,10">
                                     <div class="icontext">
-                                        <div class="icon-wrap"><i class="text-danger icon-sm fa fa-user"></i></div>
+                                        <div class="icon-wrap"><i class="text-primary icon-sm fa fa-user"></i></div>
                                         <div class="text-wrap text-dark">
                                             Akun
                                             <i class="fa fa-caret-down"></i>
@@ -66,14 +63,14 @@
                                 <div class="dropdown-menu">
                                     <div class="pl-1">
                                         <a class="dropdown-item" href="<?= base_url('profil') ?>">
-                                            <div class="text-danger font-weight-light">Profil</div>
+                                            <div class="text-primary font-weight-light">Profil</div>
                                         </a>
                                         <a class="dropdown-item" href="<?= base_url('history_order') ?>">
-                                            <div class="text-danger font-weight-light">Riwayat Belanja</div>
+                                            <div class="text-primary font-weight-light">Riwayat Belanja</div>
                                         </a>
                                     </div>
                                     <hr class="dropdown-divider">
-                                    <a class="dropdown-item" href="<?= base_url('logout') ?>"><span class="text-danger">
+                                    <a class="dropdown-item" href="<?= base_url('logout') ?>"><span class="text-primary">
                                             Keluar
                                         </span></a>
                                 </div>
@@ -86,7 +83,7 @@
                             <div class="widget-header dropdown">
                                 <a href="#" data-toggle="dropdown" data-offset="20,10">
                                     <div class="icontext">
-                                        <div class="icon-wrap"><i class="text-danger icon-sm fa fa-user"></i></div>
+                                        <div class="icon-wrap"><i class="text-primary icon-sm fa fa-user"></i></div>
                                         <div class="text-wrap text-dark">
                                             Masuk <i class="fa fa-caret-down"></i>
                                         </div>
@@ -122,7 +119,7 @@
 
                         <a href="<?= base_url('keranjang'); ?>">
                             <div class="icontext">
-                                <div class="icon-wrap"><i class="text-danger icon-sm fa fa-shopping-cart mr-0"></i>
+                                <div class="icon-wrap"><i class="text-primary icon-sm fa fa-shopping-cart mr-0"></i>
                                 </div>
                                 <div class="text-wrap text-dark m-0">
                                     <?php
@@ -144,7 +141,7 @@
                     <div class="col-auto ml-1 border-left">
                         <a href="">
                             <div class="icontext">
-                                <div class="icon-wrap"><i class=" text-danger icon-sm fa fa-bell" aria-hidden="true"></i>
+                                <div class="icon-wrap"><i class=" text-primary icon-sm fa fa-bell" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </a>
@@ -164,3 +161,23 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y-sm" style="min-height:430px">
     <div class="container">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="10000">
+                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>

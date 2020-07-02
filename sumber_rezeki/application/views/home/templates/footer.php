@@ -50,17 +50,3 @@
         </div><!-- //container -->
     </footer>
     <!-- ========================= FOOTER END // ========================= -->
-    <script src="<?= base_url('assets/') ?>js/myjs.js" type="text/javascript"></script>
-    <!-- Datatable  
-<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-<script> -->
-    $(document).ready(function() {
-    $('#tabel-order').DataTable();
-    });
-    </script> -->
-
-    </body>
-
-    </html>

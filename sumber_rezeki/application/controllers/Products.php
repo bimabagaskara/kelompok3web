@@ -13,7 +13,7 @@ class Products extends REST_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Products_model', 'products');
+        $this->load->model('Products_android', 'products');
 
         $this->methods['index_get']['limit'] = 10;
     }

@@ -29,12 +29,12 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h1 class="text-center font-weight-bold text-danger"> <i class="fas fa-shopping-cart"></i> Sumber Rezeki
+                <h1 class="text-center font-weight-bold text-primary"> <i class="fas fa-shopping-cart"></i> Sumber Rezeki
                 </h1>
                 <div class="text-center mb-2">Daftar akun baru sekarang </div>
                 <div class="card shadow-sm">
                     <header class="card-header">
-                        <a href="" class="float-right btn btn-outline-danger mt-1">Masuk</a>
+                        <a href="" class="float-right btn btn-outline-primary mt-1">Masuk</a>
                         <h4 class="card-title mt-2">Daftar</h4>
                     </header>
                     <article class="card-body">
@@ -87,7 +87,7 @@
                             </div>
                             <!-- form-group end.// -->
                             <div class="form-group">
-                                <button type="submit" class="btn btn-danger btn-block"> Register </button>
+                                <button type="submit" class="btn btn-primary btn-block"> Register </button>
                             </div>
                             <!-- form-group// -->
                             <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our

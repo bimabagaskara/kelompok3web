@@ -107,7 +107,7 @@
 
                     </div>
                 </div>
-                <button class="btn btn-danger float-right" type="submit" name="bayar" value="Bayar">Bayar</button>
+                <button class="btn btn-primary float-right" type="submit" name="bayar" value="Bayar">Bayar</button>
 
         </form>
 

@@ -7,13 +7,16 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
-                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                    <img src="include/assets/img/caraousel/profil.jpg" width="400px" height="400px" style="display: block; margin: auto" class="d-block w-80" alt="...">
                 </div>
                 <div class="carousel-item" data-interval="2000">
-                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="400px" height="400px" style="display: block; margin: auto" class="d-block w-80" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="include/assets/img/caraousel/lmp14w.jpg" width="50%" height="50%" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                    <img src="include/assets/img/caraousel/MATSUGI.jpg" width="400px" height="400px" style="display: block; margin: auto" class="d-block w-80" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="include/assets/img/caraousel/7_.jpg" width="400px" height="400px" style="display: block; margin: auto" class="d-block w-80" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">

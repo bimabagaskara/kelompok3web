@@ -4,7 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 class Products_model extends CI_Model {
-	public function getProducts($id_products = null)
+  public function getProductss($id_products = null)
+	{
+
+    if( $id_products === null ) {
+      return $this->db->get('products')->result_array();
+    } else {
+      return $this->db->get_where('products', ['id_products' => $id_products])->result_array();
+    }
+    
+    
+  }
+  
+	public function getProducts()
 	{
     
   	$this->db->select('*');
@@ -13,12 +25,6 @@ class Products_model extends CI_Model {
   	$this->db->order_by('id_products', 'asc');
   	$query = $this->db->get();
     return $query->result_array();
-    if ( $id_products === null ) {
-      return $this->db->get('products')->result_array();
-    } else {
-      return $this->db->get_where('products', ['id_products' => $id_products])->result_array();
-    }
-    
     
 	}
 

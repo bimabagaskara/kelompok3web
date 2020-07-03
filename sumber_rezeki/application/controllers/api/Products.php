@@ -15,16 +15,16 @@ class Products extends REST_Controller
         parent::__construct();
         $this->load->model('Products_model', 'products');
 
-        $this->methods['index_get']['limit'] = 10;
+        $this->methods['index_get']['limit'] = 100;
     }
 
     public function index_get()
     {
         $id_products = $this->get('id_products');
-        if ($id_products === null) {
-            $products = $this->products->getProducts();
+        if($id_products === null) {
+            $products = $this->products->getProductss();
         } else {
-            $products = $this->products->getProducts($id_products);
+            $products = $this->products->getProductss($id_products);        
         }
         
         if($products) {
@@ -38,9 +38,6 @@ class Products extends REST_Controller
                     'message' => 'id not found'
                 ], REST_Controller::HTTP_NOT_FOUND);
         }
-    }
-
-
-
+}
 
 }
